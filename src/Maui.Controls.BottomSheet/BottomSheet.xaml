@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XGENO.Maui.Controls.BottomSheet">
+
+    <ContentView.Resources>
+        <!-- Grid Styles -->
+        <Style TargetType="Grid">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="RowSpacing" Value="0" />
+            <Setter Property="ColumnSpacing" Value="0" />
+            <Setter Property="VerticalOptions" Value="Fill" />
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+        </Style>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+        <Grid
+            x:Name="BackgroundFader"
+            BackgroundColor="#DDDDDDDD"
+            IsVisible="false"
+            Opacity="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition x:Name="BottomSheetRowDefinition" Height="0" />
+            </Grid.RowDefinitions>
+
+            <!-- Close Button -->
+            <!--<Image
+                    x:Name="ClosePopupPaneButton"
+                    HeightRequest="40"
+                    Opacity="0"
+                    Source="close.png"
+                    WidthRequest="40"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start">
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ClosePopupPaneButton_Tapped" />
+                    </Image.GestureRecognizers>
+
+                </Image>-->
+
+            <!-- Enclosing Border Control for Content -->
+            <Border
+                Grid.Row="1"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill">
+
+                <Grid
+                    RowDefinitions="Auto,*">
+
+                    <!-- Header Content -->
+                    <Label
+                        x:Name="HeaderLabel"
+                        Grid.Row="0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+
+                    <!-- Main Content -->
+                    <Grid
+                        x:Name="BottomSheetContentGrid"
+                        Grid.Row="1" />
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+    </ContentView.Content>
+
+</ContentView>
+

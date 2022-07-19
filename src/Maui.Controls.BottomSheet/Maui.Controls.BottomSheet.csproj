@@ -27,4 +27,9 @@
 	  <Folder Include="Platforms\MacCatalyst\" />
 	  <Folder Include="Platforms\Windows\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="BottomSheet.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
+	</ItemGroup>
 </Project>
