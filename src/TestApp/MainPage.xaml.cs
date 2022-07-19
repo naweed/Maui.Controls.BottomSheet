@@ -8,9 +8,8 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-    void Button_Clicked(System.Object sender, System.EventArgs e)
-    {
-    }
+	async void SimpleBottomSheetButton_Clicked(System.Object sender, System.EventArgs e) =>
+		await simpleBottomSheet.OpenBottomSheet();
 }
 
 

@@ -1,13 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TestApp.MainPage">
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XGENO.Maui.Controls;assembly=Maui.Controls.BottomSheet"
+    x:Class="TestApp.MainPage">
 			 
-    <Grid>
+    <Grid
+        IgnoreSafeArea="False">
 
-        <Button
-            Text="Simple Bottomsheet"
-            Clicked="Button_Clicked" />
+        <VerticalStackLayout
+            VerticalOptions="Center"
+            Margin="32,0"
+            Spacing="16">
+
+            <Button
+                Text="Simple Bottomsheet"
+                Clicked="SimpleBottomSheetButton_Clicked" />
+        </VerticalStackLayout>
+
+        <!-- Simple Bottom Sheet -->
+        <controls:BottomSheet
+            x:Name="simpleBottomSheet">
+            <controls:BottomSheet.BottomSheetContent>
+                <Label
+                    Text="Hello from Bottom Sheet" />
+            </controls:BottomSheet.BottomSheetContent>
+        </controls:BottomSheet>
+
 
     </Grid>
  

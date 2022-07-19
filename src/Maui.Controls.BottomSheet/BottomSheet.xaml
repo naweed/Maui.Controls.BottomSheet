@@ -2,7 +2,8 @@
 <ContentView
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="XGENO.Maui.Controls.BottomSheet">
+    x:Class="XGENO.Maui.Controls.BottomSheet"
+    InputTransparent="True">
 
     <ContentView.Resources>
         <!-- Grid Styles -->
@@ -26,7 +27,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition x:Name="BottomSheetRowDefinition" Height="0" />
+                <RowDefinition x:Name="BottomSheetRowDefinition" Height="300" />
             </Grid.RowDefinitions>
 
             <!-- Close Button -->
@@ -47,9 +48,16 @@
 
             <!-- Enclosing Border Control for Content -->
             <Border
+                x:Name="MainContent"
                 Grid.Row="1"
                 VerticalOptions="Fill"
-                HorizontalOptions="Fill">
+                HorizontalOptions="Fill"
+                BackgroundColor="#FFFFFF"
+                TranslationY="300">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="32,32,0,0"/>
+                </Border.StrokeShape>
 
                 <Grid
                     RowDefinitions="Auto,*">
