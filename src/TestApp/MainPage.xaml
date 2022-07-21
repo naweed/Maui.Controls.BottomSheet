@@ -6,7 +6,7 @@
     x:Class="TestApp.MainPage">
 			 
     <Grid
-        IgnoreSafeArea="False">
+        IgnoreSafeArea="True">
 
         <VerticalStackLayout
             VerticalOptions="Center"
@@ -20,13 +20,27 @@
 
         <!-- Simple Bottom Sheet -->
         <controls:BottomSheet
-            x:Name="simpleBottomSheet">
+            x:Name="simpleBottomSheet"
+            HeaderText="Submit Ratings"
+            HeaderStyle="{StaticResource BigRedStyle}">
+
             <controls:BottomSheet.BottomSheetContent>
                 <Label
                     Text="Hello from Bottom Sheet" />
             </controls:BottomSheet.BottomSheetContent>
+
         </controls:BottomSheet>
 
+        <!--<controls:BottomSheet
+            x:Name="simpleBottomSheet"
+            HeaderText="Submit Ratings">
+
+            <controls:BottomSheet.BottomSheetContent>
+                <Label
+                    Text="Hello from Bottom Sheet" />
+            </controls:BottomSheet.BottomSheetContent>
+
+        </controls:BottomSheet>-->
 
     </Grid>
  

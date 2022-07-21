@@ -47,4 +47,10 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Maui.Controls.BottomSheet\Maui.Controls.BottomSheet.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Resources\Styles\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Resources\Styles\" />
+	</ItemGroup>
 </Project>

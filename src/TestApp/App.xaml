@@ -4,12 +4,10 @@
              xmlns:local="clr-namespace:TestApp"
              x:Class="TestApp.App">
     <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <Style TargetType="Label" x:Key="BigRedStyle">
+            <Setter Property="FontSize" Value="36" />
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
     </Application.Resources>
 </Application>
 

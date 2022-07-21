@@ -15,7 +15,7 @@ public partial class BottomSheet : ContentView
         nameof(SheetHeight),
         typeof(double),
         typeof(BottomSheet),
-        300d,
+        360d,
         BindingMode.OneWay,
         validateValue: (_, value) => value != null,
         propertyChanged:
@@ -33,6 +33,51 @@ public partial class BottomSheet : ContentView
         get => (double)GetValue(SheetHeightProperty);
         set => SetValue(SheetHeightProperty, value);
     }
+
+    public static readonly BindableProperty HeaderTextProperty = BindableProperty.Create(
+        nameof(HeaderText),
+        typeof(string),
+        typeof(BottomSheet),
+        string.Empty,
+        BindingMode.OneWay,
+        validateValue: (_, value) => value != null,
+        propertyChanged:
+        (bindableObject, oldValue, newValue) =>
+        {
+            if (newValue is not null && bindableObject is BottomSheet sheet && newValue != oldValue)
+            {
+                sheet.HeaderLabel.Text = ((string)newValue);
+            }
+        });
+
+    public string HeaderText
+    {
+        get => (string)GetValue(HeaderTextProperty);
+        set => SetValue(HeaderTextProperty, value);
+    }
+
+    public static readonly BindableProperty HeaderStyleProperty = BindableProperty.Create(
+        nameof(HeaderStyle),
+        typeof(Style),
+        typeof(BottomSheet),
+        null,
+        BindingMode.OneWay,
+        validateValue: (_, value) => value != null,
+        propertyChanged:
+        (bindableObject, oldValue, newValue) =>
+        {
+            if (newValue is not null && bindableObject is BottomSheet sheet && newValue != oldValue)
+            {
+                sheet.HeaderLabel.Style = ((Style)newValue);
+            }
+        });
+
+    public Style HeaderStyle
+    {
+        get => (Style)GetValue(HeaderStyleProperty);
+        set => SetValue(HeaderStyleProperty, value);
+    }
+
 
     #endregion
 

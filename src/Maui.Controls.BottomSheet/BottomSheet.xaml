@@ -3,7 +3,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="XGENO.Maui.Controls.BottomSheet"
-    InputTransparent="True">
+    InputTransparent="True"
+    VerticalOptions="Fill"
+    HorizontalOptions="Fill">
 
     <ContentView.Resources>
         <!-- Grid Styles -->
@@ -21,13 +23,14 @@
     <ContentView.Content>
         <Grid
             x:Name="BackgroundFader"
-            BackgroundColor="#DDDDDDDD"
+            BackgroundColor="#DDCCCCCC"
             IsVisible="false"
-            Opacity="0">
+            Opacity="0"
+            IgnoreSafeArea="True">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition x:Name="BottomSheetRowDefinition" Height="300" />
+                <RowDefinition x:Name="BottomSheetRowDefinition" Height="360" />
             </Grid.RowDefinitions>
 
             <!-- Close Button -->
@@ -50,17 +53,19 @@
             <Border
                 x:Name="MainContent"
                 Grid.Row="1"
+                Padding="24,24,24,0"
                 VerticalOptions="Fill"
                 HorizontalOptions="Fill"
                 BackgroundColor="#FFFFFF"
-                TranslationY="300">
+                TranslationY="360">
 
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="32,32,0,0"/>
                 </Border.StrokeShape>
 
                 <Grid
-                    RowDefinitions="Auto,*">
+                    RowDefinitions="Auto,*"
+                    RowSpacing="16">
 
                     <!-- Header Content -->
                     <Label
@@ -68,7 +73,8 @@
                         Grid.Row="0"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        VerticalTextAlignment="Center" />
+                        VerticalTextAlignment="Center"
+                        FontSize="24" />
 
                     <!-- Main Content -->
                     <Grid
