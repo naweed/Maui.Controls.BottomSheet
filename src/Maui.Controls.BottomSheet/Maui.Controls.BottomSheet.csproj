@@ -20,6 +20,7 @@
 	  <None Remove="Platforms\iOS\" />
 	  <None Remove="Platforms\MacCatalyst\" />
 	  <None Remove="Platforms\Windows\" />
+	  <None Remove="icnmenuclose.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Platforms\Android\" />
@@ -31,5 +32,10 @@
 	  <MauiXaml Update="BottomSheet.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="icnmenuclose.png">
+	    <LogicalName>XGENO.Maui.Controls.BottomSheet.icnmenuclose.png</LogicalName>
+	  </EmbeddedResource>
 	</ItemGroup>
 </Project>

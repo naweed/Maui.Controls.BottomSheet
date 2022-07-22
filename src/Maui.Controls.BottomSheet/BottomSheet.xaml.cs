@@ -1,11 +1,9 @@
-﻿using Microsoft.Maui;
-using Microsoft.VisualBasic;
-
-namespace XGENO.Maui.Controls;
+﻿namespace XGENO.Maui.Controls;
 
 public partial class BottomSheet : ContentView
 {
-    private const uint shortDuration = 500;
+    private const uint shortDuration = 250u;
+    private const uint regularDuration = shortDuration * 2u;
 
     public IList<Microsoft.Maui.IView> BottomSheetContent => BottomSheetContentGrid.Children;
 
@@ -84,20 +82,35 @@ public partial class BottomSheet : ContentView
     public BottomSheet()
 	{
 		InitializeComponent();
-	}
+
+        CloseBottomSheetButton.Source = ImageSource.FromResource(
+            "XGENO.Maui.Controls.BottomSheet.icnmenuclose.png");
+    }
 
 	public async Task OpenBottomSheet()
     {
-        
+        this.InputTransparent = false;
         BackgroundFader.IsVisible = true;
-        _ = BackgroundFader.FadeTo(1, shortDuration, Easing.SinInOut);
-        await MainContent.TranslateTo(0, 0, shortDuration, Easing.SinInOut);
+        CloseBottomSheetButton.IsVisible = true;
 
-        //AnimateClosePopupButton(ClosePopupPaneButton, entering: true);
+        _ = BackgroundFader.FadeTo(1, shortDuration, Easing.SinInOut);
+        _ = MainContent.TranslateTo(0, 0, regularDuration, Easing.SinInOut);
+        await CloseBottomSheetButton.FadeTo(1, regularDuration, Easing.SinInOut);
     }
 
     public async Task CloseBottomSheet()
     {
-        await Task.CompletedTask;
+        await CloseBottomSheetButton.FadeTo(0, shortDuration, Easing.SinInOut);
+        _ = MainContent.TranslateTo(0, SheetHeight, shortDuration, Easing.SinInOut);
+        await BackgroundFader.FadeTo(0, shortDuration, Easing.SinInOut);
+
+        BackgroundFader.IsVisible = true;
+        CloseBottomSheetButton.IsVisible = true;
+        this.InputTransparent = true;
     }
+
+    async void CloseBottomSheetButton_Tapped(System.Object sender, System.EventArgs e) =>
+        await CloseBottomSheet();
 }
+
+//,typeof(XGENO.Maui.Controls.BottomSheet).GetTypeInfo().Assembly

@@ -34,20 +34,22 @@
             </Grid.RowDefinitions>
 
             <!-- Close Button -->
-            <!--<Image
-                    x:Name="ClosePopupPaneButton"
-                    HeightRequest="40"
-                    Opacity="0"
-                    Source="close.png"
-                    WidthRequest="40"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Start">
+            <Image
+                x:Name="CloseBottomSheetButton"
+                Grid.Row="0"
+                HeightRequest="40"
+                WidthRequest="40"
+                IsVisible="False"
+                Opacity="0"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Margin="0,0,0,16">
 
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="ClosePopupPaneButton_Tapped" />
-                    </Image.GestureRecognizers>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="CloseBottomSheetButton_Tapped" />
+                </Image.GestureRecognizers>
 
-                </Image>-->
+            </Image>
 
             <!-- Enclosing Border Control for Content -->
             <Border
@@ -57,6 +59,8 @@
                 VerticalOptions="Fill"
                 HorizontalOptions="Fill"
                 BackgroundColor="#FFFFFF"
+                Stroke="#FFFFFF"
+                StrokeThickness="0"
                 TranslationY="360">
 
                 <Border.StrokeShape>
@@ -89,4 +93,3 @@
     </ContentView.Content>
 
 </ContentView>
-
