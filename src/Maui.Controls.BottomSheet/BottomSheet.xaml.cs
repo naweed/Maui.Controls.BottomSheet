@@ -43,7 +43,17 @@ public partial class BottomSheet : ContentView
         nameof(HeaderStyle),
         typeof(Style),
         typeof(BottomSheet),
-        null,
+        new Style(typeof(Label))
+        {
+            Setters =
+            {
+                new Setter
+                {
+                    Property = Label.FontSizeProperty,
+                    Value = 24
+                }
+            }
+        },
         BindingMode.OneWay,
         validateValue: (_, value) => value != null);
 

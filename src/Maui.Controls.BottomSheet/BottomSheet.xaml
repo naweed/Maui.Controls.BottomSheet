@@ -79,8 +79,7 @@
                         Grid.Row="0"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        VerticalTextAlignment="Center"
-                        FontSize="24" />
+                        VerticalTextAlignment="Center" />
 
                     <!-- Main Content -->
                     <Grid
