@@ -49,8 +49,10 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Resources\Styles\" />
+	  <None Remove="MockData\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Resources\Styles\" />
+	  <Folder Include="MockData\" />
 	</ItemGroup>
 </Project>

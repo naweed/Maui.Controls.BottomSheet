@@ -14,35 +14,143 @@
             Spacing="16">
 
             <Button
-                Text="Simple Bottomsheet"
+                Text="Simple Bottom Sheet"
                 Clicked="SimpleBottomSheetButton_Clicked" />
+
+            <Button
+                Text="Custom Header Style"
+                Clicked="CustomBottomSheetButton_Clicked" />
+
+            <Button
+                Text="Custom Sheet Height"
+                Clicked="CustomBottomSheetButton2_Clicked" />
+
+            <Button
+                Text="Open and Close Bottom Sheet"
+                Clicked="CustomBottomSheetButton3_Clicked" />
+
+            <Button
+                Text="Putting it altogether"
+                Clicked="CustomBottomSheetButton4_Clicked" />
+
         </VerticalStackLayout>
 
         <!-- Simple Bottom Sheet -->
         <controls:BottomSheet
             x:Name="simpleBottomSheet"
-            HeaderText="Submit Ratings"
-            HeaderStyle="{StaticResource BigRedStyle}">
-
+            HeaderText="Simple Example">
             <controls:BottomSheet.BottomSheetContent>
                 <Label
-                    Text="Hello from Bottom Sheet" />
+                    Text="Hello from Bottom Sheet. This is a simple implementation with no customization."
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
             </controls:BottomSheet.BottomSheetContent>
-
         </controls:BottomSheet>
 
-        <!--<controls:BottomSheet
-            x:Name="simpleBottomSheet"
-            HeaderText="Submit Ratings">
-
+        <!-- Custom Header Style Bottom Sheet -->
+        <controls:BottomSheet
+            x:Name="customBottomSheet1"
+            HeaderText="Custom Header Style"
+            HeaderStyle="{StaticResource BigRedStyle}">
             <controls:BottomSheet.BottomSheetContent>
                 <Label
-                    Text="Hello from Bottom Sheet" />
+                    Text="Look Ma! I can customize the header style of the Bottom Sheet."
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
             </controls:BottomSheet.BottomSheetContent>
+        </controls:BottomSheet>
 
-        </controls:BottomSheet>-->
+        <!-- Custom Sheet Height Bottom Sheet -->
+        <controls:BottomSheet
+            x:Name="customBottomSheet2"
+            HeaderText="Custom Sheet Height"
+            SheetHeight="200">
+            <controls:BottomSheet.BottomSheetContent>
+                <Label
+                    Text="Now we have a Bottom Sheet with custom Sheet Height."
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+            </controls:BottomSheet.BottomSheetContent>
+        </controls:BottomSheet>
+
+        <!-- Open and Close Bottom Sheet -->
+        <controls:BottomSheet
+            x:Name="customBottomSheet3"
+            HeaderText="Close Sheet Example">
+            <controls:BottomSheet.BottomSheetContent>
+                <VerticalStackLayout
+                    Spacing="24">
+
+                    <Label
+                        Text="You can also close the bottom sheet programatically. Press on the button below to close the bottom sheet."
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center" />
+
+                    <Button
+                        Text="Close Me!!!!!!!"
+                        Clicked="CloseMe_Clicked" />
+
+                </VerticalStackLayout>
+            </controls:BottomSheet.BottomSheetContent>
+        </controls:BottomSheet>
+
+
+        <!-- A Real-world Bottom Sheet -->
+        <controls:BottomSheet
+            x:Name="customBottomSheet4"
+            HeaderText="Choose a Movie"
+            HeaderStyle="{StaticResource BigRedStyle}"
+            SheetHeight="660">
+            <controls:BottomSheet.BottomSheetContent>
+                <Grid
+                    RowSpacing="16"
+                    RowDefinitions="Auto,*">
+
+                    <Label
+                        Grid.Row="0"
+                        Text="Select a Movie from the list below." />
+
+                    <CollectionView
+                        Grid.Row="1"
+                        ItemsSource="{Binding Movies}"
+                        SelectionMode="Single"
+                        SelectionChanged="lstMovies_SelectionChanged">
+
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout
+                                ItemSpacing="8"
+                                Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame
+                                    HasShadow="False"
+                                    CornerRadius="16"
+                                    Padding="0"
+                                    HorizontalOptions="Fill"
+                                    HeightRequest="140"
+                                    IsClippedToBounds="True">
+
+                                    <Image
+                                        VerticalOptions="Fill"
+                                        HorizontalOptions="Fill"
+                                        Aspect="AspectFill"
+                                        Source="{Binding Poster}" />
+
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </Grid>
+            </controls:BottomSheet.BottomSheetContent>
+        </controls:BottomSheet>
 
     </Grid>
  
 </ContentPage>
-
