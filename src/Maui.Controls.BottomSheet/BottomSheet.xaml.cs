@@ -17,16 +17,7 @@ public partial class BottomSheet : ContentView
         typeof(BottomSheet),
         360d,
         BindingMode.OneWay,
-        validateValue: (_, value) => value != null,
-        propertyChanged:
-        (bindableObject, oldValue, newValue) =>
-        {
-            if (newValue is not null && bindableObject is BottomSheet sheet && newValue != oldValue)
-            {
-                sheet.BottomSheetRowDefinition.Height = ((double)newValue);
-                sheet.MainContent.TranslationY = ((double)newValue);
-            }
-        });
+        validateValue: (_, value) => value != null);
 
     public double SheetHeight
     {
@@ -40,15 +31,7 @@ public partial class BottomSheet : ContentView
         typeof(BottomSheet),
         string.Empty,
         BindingMode.OneWay,
-        validateValue: (_, value) => value != null,
-        propertyChanged:
-        (bindableObject, oldValue, newValue) =>
-        {
-            if (newValue is not null && bindableObject is BottomSheet sheet && newValue != oldValue)
-            {
-                sheet.HeaderLabel.Text = ((string)newValue);
-            }
-        });
+        validateValue: (_, value) => value != null);
 
     public string HeaderText
     {
@@ -62,15 +45,7 @@ public partial class BottomSheet : ContentView
         typeof(BottomSheet),
         null,
         BindingMode.OneWay,
-        validateValue: (_, value) => value != null,
-        propertyChanged:
-        (bindableObject, oldValue, newValue) =>
-        {
-            if (newValue is not null && bindableObject is BottomSheet sheet && newValue != oldValue)
-            {
-                sheet.HeaderLabel.Style = ((Style)newValue);
-            }
-        });
+        validateValue: (_, value) => value != null);
 
     public Style HeaderStyle
     {
@@ -94,16 +69,16 @@ public partial class BottomSheet : ContentView
             }
         });
 
-    private void UpdateTheme()
-    {
-        MainContent.BackgroundColor = Color.FromArgb(Theme == DisplayTheme.Dark ? "#333333" : "#FFFFFF");
-        MainContent.Stroke = Color.FromArgb(Theme == DisplayTheme.Dark ? "#333333" : "#FFFFFF");
-    }
-
     public DisplayTheme Theme
     {
         get => (DisplayTheme)GetValue(ThemeProperty);
         set => SetValue(ThemeProperty, value);
+    }
+
+    private void UpdateTheme()
+    {
+        MainContent.BackgroundColor = Color.FromArgb(Theme == DisplayTheme.Dark ? "#333333" : "#FFFFFF");
+        MainContent.Stroke = Color.FromArgb(Theme == DisplayTheme.Dark ? "#333333" : "#FFFFFF");
     }
 
     #endregion

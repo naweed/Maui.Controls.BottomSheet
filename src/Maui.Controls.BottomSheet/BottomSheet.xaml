@@ -5,6 +5,7 @@
     x:Class="XGENO.Maui.Controls.BottomSheet"
     InputTransparent="True"
     VerticalOptions="Fill"
+    x:Name="BottomSheetControlRoot"
     HorizontalOptions="Fill">
 
     <ContentView.Resources>
@@ -30,7 +31,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition x:Name="BottomSheetRowDefinition" Height="360" />
+                <RowDefinition x:Name="BottomSheetRowDefinition" Height="{Binding Source={x:Reference BottomSheetControlRoot}, Path=SheetHeight, Mode=OneWay}" />
             </Grid.RowDefinitions>
 
             <!-- Close Button -->
@@ -60,7 +61,7 @@
                 VerticalOptions="Fill"
                 HorizontalOptions="Fill"
                 StrokeThickness="0"
-                TranslationY="360">
+                TranslationY="{Binding Source={x:Reference BottomSheetControlRoot}, Path=SheetHeight, Mode=OneWay}">
 
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="32,32,0,0"/>
@@ -73,6 +74,8 @@
                     <!-- Header Content -->
                     <Label
                         x:Name="HeaderLabel"
+                        Style="{Binding Source={x:Reference BottomSheetControlRoot}, Path=HeaderStyle, Mode=OneWay}"
+                        Text="{Binding Source={x:Reference BottomSheetControlRoot}, Path=HeaderText, Mode=OneWay}"
                         Grid.Row="0"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
