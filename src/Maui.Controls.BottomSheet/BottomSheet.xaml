@@ -56,10 +56,9 @@
                 x:Name="MainContent"
                 Grid.Row="1"
                 Padding="24,24,24,0"
+                Margin="-1"
                 VerticalOptions="Fill"
                 HorizontalOptions="Fill"
-                BackgroundColor="#FFFFFF"
-                Stroke="#FFFFFF"
                 StrokeThickness="0"
                 TranslationY="360">
 

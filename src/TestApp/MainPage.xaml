@@ -26,12 +26,16 @@
                 Clicked="CustomBottomSheetButton2_Clicked" />
 
             <Button
-                Text="Open and Close Bottom Sheet"
+                Text="Progrmatically Close Bottom Sheet"
                 Clicked="CustomBottomSheetButton3_Clicked" />
 
             <Button
                 Text="Putting it altogether"
                 Clicked="CustomBottomSheetButton4_Clicked" />
+
+            <Button
+                Text="Dark Theme"
+                Clicked="DarkBottomSheet_Clicked" />
 
         </VerticalStackLayout>
 
@@ -150,6 +154,23 @@
                 </Grid>
             </controls:BottomSheet.BottomSheetContent>
         </controls:BottomSheet>
+
+        <!-- Dark Bottom Sheet -->
+        <controls:BottomSheet
+            x:Name="darkBottomSheet"
+            HeaderText="Simple Example"
+            HeaderStyle="{StaticResource BigDarkStyle}"
+            Theme="Dark">
+            <controls:BottomSheet.BottomSheetContent>
+                <Label
+                    Text="Hello from Bottom Sheet. This is a bottom sheet with dark theme."
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+            </controls:BottomSheet.BottomSheetContent>
+        </controls:BottomSheet>
+
 
     </Grid>
  

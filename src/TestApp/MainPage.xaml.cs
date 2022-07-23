@@ -33,6 +33,9 @@ public partial class MainPage : ContentPage
     async void CloseMe_Clicked(System.Object sender, System.EventArgs e) =>
         await customBottomSheet3.CloseBottomSheet();
 
+    async void DarkBottomSheet_Clicked(System.Object sender, System.EventArgs e) =>
+        await darkBottomSheet.OpenBottomSheet();
+
     async void lstMovies_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
     {
         var selectedMovie = e.CurrentSelection.First() as Movie;

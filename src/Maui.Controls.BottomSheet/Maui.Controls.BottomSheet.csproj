@@ -21,6 +21,7 @@
 	  <None Remove="Platforms\MacCatalyst\" />
 	  <None Remove="Platforms\Windows\" />
 	  <None Remove="icnmenuclose.png" />
+	  <None Remove="icnmenuclosedark.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Platforms\Android\" />
@@ -36,6 +37,9 @@
 	<ItemGroup>
 	  <EmbeddedResource Include="icnmenuclose.png">
 	    <LogicalName>XGENO.Maui.Controls.BottomSheet.icnmenuclose.png</LogicalName>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="icnmenuclosedark.png">
+	    <LogicalName>XGENO.Maui.Controls.BottomSheet.icnmenuclosedark.png</LogicalName>
 	  </EmbeddedResource>
 	</ItemGroup>
 </Project>
