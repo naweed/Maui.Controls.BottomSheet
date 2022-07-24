@@ -1,6 +1,4 @@
-﻿using Maui.Controls.BottomSheet;
-
-namespace XGENO.Maui.Controls;
+﻿namespace XGENO.Maui.Controls;
 
 public partial class BottomSheet : ContentView
 {

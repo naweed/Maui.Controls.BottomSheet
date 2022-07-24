@@ -1,4 +1,4 @@
-﻿namespace Maui.Controls.BottomSheet;
+﻿namespace XGENO.Maui.Controls;
 
 public enum DisplayTheme
 {
