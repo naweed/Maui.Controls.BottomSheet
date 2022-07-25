@@ -4,11 +4,11 @@ A simple customizable Bottom Sheet control built using .NET MAUI.
 You can read more about implementation of this control at [https://blogs.xgenoapps.com/post/2022/07/23/maui-bottom-sheet](https://blogs.xgenoapps.com/post/2022/07/23/maui-bottom-sheet)
 
 ## How to use
-Add the following namespace declaration in your Maui Form pages:
+1. Add the following namespace declaration in your Maui Form pages:
 ```
 xmlns:controls="clr-namespace:XGENO.Maui.Controls;assembly=Maui.Controls.BottomSheet"
 ```
-3. Add the control to the page and set the properties as necessary.
+2. Add the control to the page and set the properties as necessary.
 ```
 <controls:BottomSheet
     x:Name="simpleBottomSheet"
@@ -37,7 +37,7 @@ You can customize the control using any of the below properties
 | IsReadOnly   | Boolean        | This will be implemented in future and will be used to allow interactions to change the rating via user interactions. Currently defaulted to true.      |
 | ShapePath   | String        | Used to define the shape of the item to draw. Defaulted to Star shape.      |
 
-## Running Example.
+## Running Example
 https://user-images.githubusercontent.com/103980/180698691-39030b2c-d79e-4412-9435-9590b8181b55.mp4
 
 
