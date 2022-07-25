@@ -26,16 +26,10 @@ xmlns:controls="clr-namespace:XGENO.Maui.Controls;assembly=Maui.Controls.BottomS
 You can customize the control using any of the below properties
 | Property | Data Type | Explanation |
 | :--- | :----: | :--- |
-| ItemCount      | Integer       | The number of rating items (e.g. stars) to draw. Defaulted to 5.   |
-| ItemSize   | Float        | Defines the height of the item/star. Defaulted to 24f.      |
-| ItemSpacing   | Float        | Defines the spacing between items/stars. Defaulted to 6f.      |
-| Value   | Double        | The Value of the Rating used to fill the shape items/stars. Defaulted to 2.5d.      |
-| RatedFillColor   | Color        | The color used to fill the shape items/stars with rating value. Defaulted to Yellow.     |
-| UnRatedFillColor   | Color        | The color used to fill the empty shape items/stars. Defaulted to Light Grey.      |
-| StrokeColor   | Color        | The color used to outline shape items/stars. Defaulted to Light Yellow.      |
-| StrokeWidth   | Float        | Defines the stroke size of the outline. Defaulted to 1f.      |
-| IsReadOnly   | Boolean        | This will be implemented in future and will be used to allow interactions to change the rating via user interactions. Currently defaulted to true.      |
-| ShapePath   | String        | Used to define the shape of the item to draw. Defaulted to Star shape.      |
+| HeaderText      | String       | This is the text which will be displayed as the header of the bottom sheet.   |
+| HeaderStyle   | Label Style        | The header text can be styled as needed. By default, it uses the default font with FontSize of 24.      |
+| Theme   | Enum        | Defines the theme of the bottom sheet. It is based on enum values of Light and Dark. The bottom sheet color changes based on this theme (white for light theme and dark gray for Dark theme).      |
+| SheetHeight   | Double        | This is perhaps the most important property. This defines the height of the content area of the bottom sheet.      |
 
 ## Running Example
 https://user-images.githubusercontent.com/103980/180698691-39030b2c-d79e-4412-9435-9590b8181b55.mp4
