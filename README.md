@@ -22,7 +22,7 @@ xmlns:controls="clr-namespace:XGENO.Maui.Controls;assembly=Maui.Controls.BottomS
 </controls:BottomSheet>
 ```
 
-## RatingView Customizations
+## BottomSheet Customizations
 You can customize the control using any of the below properties
 | Property | Data Type | Explanation |
 | :--- | :----: | :--- |
@@ -37,5 +37,7 @@ You can customize the control using any of the below properties
 | IsReadOnly   | Boolean        | This will be implemented in future and will be used to allow interactions to change the rating via user interactions. Currently defaulted to true.      |
 | ShapePath   | String        | Used to define the shape of the item to draw. Defaulted to Star shape.      |
 
-## Screen Shots
-![RatingView](https://user-images.githubusercontent.com/103980/177027631-85160439-1e54-4a97-83b1-cf78efb25ba7.png)
+## Running Example.
+https://user-images.githubusercontent.com/103980/180698691-39030b2c-d79e-4412-9435-9590b8181b55.mp4
+
+
