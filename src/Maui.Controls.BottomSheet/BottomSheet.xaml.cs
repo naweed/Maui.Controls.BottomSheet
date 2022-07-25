@@ -127,5 +127,3 @@ public partial class BottomSheet : ContentView
     async void CloseBottomSheetButton_Tapped(System.Object sender, System.EventArgs e) =>
         await CloseBottomSheet();
 }
-
-//,typeof(XGENO.Maui.Controls.BottomSheet).GetTypeInfo().Assembly
